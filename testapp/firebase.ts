@@ -4,12 +4,12 @@ import {connectFunctionsEmulator, getFunctions} from "firebase/functions";
 
 let db, functions;
 const firebaseConfig = {
-    apiKey: "AIzaSyBRD_r4rIHSlc7wJEJ2wLTzChZZyRuh0sk",
-    authDomain: "sequel-interview-9b911.firebaseapp.com",
-    projectId: "sequel-interview-9b911",
-    storageBucket: "sequel-interview-9b911.appspot.com",
-    messagingSenderId: "310032604749",
-    appId: "1:310032604749:web:45cc8432c6d5836d6cc604"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDING_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 export async function init() {
