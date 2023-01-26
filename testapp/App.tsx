@@ -10,18 +10,17 @@ export default function App() {
         init().then(() =>
             setLoading(false)
         )
-    })
+    }, [])
 
     const getWeather = () => {
         setLoading(true);
-        console.log("loading", loading);
 
         fetch("https://us-central1-sequel-interview-9b911.cloudfunctions.net/getWeather")
         .then((res) => {
             return res.json()
         })
         .then((res)=>{
-            setTemperature(`The current temperature is ${res.temperature} C`)
+            setTemperature(`The current temperature is ${res.temperature} °C`)
         })
         .catch((err)=>{
             setTemperature("Something went wrong, please try again later")
